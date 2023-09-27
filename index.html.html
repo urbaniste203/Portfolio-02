@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>urbaniste203 - portfolio</title>
+    <meta name="description" content="urban planning engineer, urban planning services">
+    <meta name="keywords" content="urbanisme, planning, architecture, 3d , autocad , 3d planning">
+    <link rel="icon" href="photo/urban-planning.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,600&family=Caprasimo&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --primaryColor: #ff274b;
+            --secondaryColor: #f7bcf7;
+            --lightColor: #ffffff;
+            --bgColor-1: #171a1c;
+            --bgColor-2: #22282a;
+            --padding:8%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 16px;
+            color: var(--lightColor);
+        }
+        /*------------------------------------------
+        -------------------Home Section
+        -------------------------------------------*/
+        .home{
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bgColor-1);
+            display: flex;
+            flex-direction: column;
+        }
+        span{
+            color: var(--primaryColor);
+        }
+        h2{
+            font-size: 2rem;
+            letter-spacing: 0.12rem;
+            cursor: pointer;
+        }
+        nav{
+            padding-top: 2.8rem;
+            padding-left:var(--padding);
+            padding-right:var(--padding);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul li{
+            list-style-type: none;
+            display: inline-block;
+            margin: 0.8rem 1.5rem;
+        }
+        nav ul li a {
+            color: var(--lightColor);
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.4s;
+        }
+        nav ul li a:hover{
+            color: var(--primaryColor);
+        }
+        .btn{
+            background-color: var(--primaryColor);
+            color: var(--lightColor);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.81rem 0.87rem;
+            border: 2px solid transparent;
+            border-radius: 30px;
+            transition: 0.4s;
+        }
+        .btn:hover{
+            background-color: transparent;
+            border: 2px solid var(--primaryColor);
+        }
+        .content{
+            flex-grow: 1;
+            padding: 0 var(--padding);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .container-txt{
+            position: relative;
+            bottom: 70px;
+
+        }
+        h1{
+            font-size: 4.65rem;
+            padding: 1.7rem 0;
+        }
+        h3{
+            font-size: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+        h4{
+            font-size: 1.25rem;
+            letter-spacing: 0.12rem;
+            color: var(--secondaryColor);
+        }
+        .social{
+            margin-top: 3.5rem;
+        }
+        .social a{
+            text-decoration: none;
+        }
+        .social img{
+            margin-right: 2rem;
+            width: 2.5rem;
+            transition: 0.4s;
+        }
+        .social img:hover{
+            transform: scale(1.2);
+        }
+        .home .container-img {
+            width: 45%;
+            height: 90%;
+            position: relative;
+            align-self: flex-end;
+        }
+        .home .container-img img {
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 1s, left 1s;
+
+        }
+        .home .container-img:hover .shape {
+            bottom: 40px;
+        }
+        .home .container-img:hover .pic {
+            left: 45%;
+        }
+        /*------------------------------------------
+        -------------------About Section--------------
+        -------------------------------------------*/
+        .about{
+            background-color: var(--bgColor-2);
+            padding: 2rem var(--padding);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .about .container-img{
+            width: 35%;
+        }
+        .about .container-img img{
+            width: 90%;
+        }
+        .about .container-txt {
+            width: 35%;
+        }
+        h5{
+            font-size: 1.37rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        p{
+            color: var(--secondaryColor);
+            letter-spacing: 1px;
+            line-height: 1.8rem;
+            font-size: 0.8rem;
+        }
+        /*------------------------------------------
+        -------------------Services Section---------
+        -------------------------------------------*/
+        .services{
+            background-color: var(--bgColor-1);
+            padding: 2rem var(--padding);
+        }
+        .txt-center{
+            text-align: center;
+        }
+        .box{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card{
+            width: 300px;
+            background-color: var(--bgColor-2);
+            border-radius: 20px;
+            padding: 1.3rem 2rem;
+            text-align: center;
+        }
+        .card i{
+            font-size: 3.12rem;
+            text-align: center;
+            color: var(--primaryColor);
+            margin: 2rem;
+        }
+        /*------------------------------------------
+        ------------------Skills Section------------
+        -------------------------------------------*/
+        .skills{
+            background-color: var(--bgColor-2);
+            padding: 2rem var(--padding);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .skills .container-img{
+            width: 35%;
+        }
+        .skills .container-img img{
+            width: 90%;
+        }
+        .skills .container-skills{
+            width: 50%;
+        }
+        .content-skills{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+        }
+        .skill{
+            width: 100px;
+            height: 100px;
+            background-color: var(--lightColor);
+            border-radius: 50%;
+            margin:0 2rem 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .skill img{
+            width: 70%;
+        }
+        /*------------------------------------------
+        -------------------Footer Section-----------
+        -------------------------------------------*/
+        footer{
+            padding: 2rem var(--padding);
+            background-color: var(--bgColor-1);
+
+        }
+        footer .content-footer{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .content-footer p{
+            color: var(--lightColor);
+            text-align: center;
+            width: 500px;
+            margin-top: 1rem;
+        }
+        footer .content-footer .end{
+            color: var(--primaryColor);
+            margin-top: 1rem;
+        }
+        /*------------------------------------------
+        ------------------Humberger menu--------------
+        -------------------------------------------*/
+        #menu{
+            display: none;
+            position: relative;
+            appearance: none;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            user-select: none;
+        }
+        #menu span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            background-color: var(--lightColor);
+            border-radius: 6px;
+            transform-origin: 0 0;
+            transition: 0.4s;
+            margin-bottom: 5px;
+        }
+        #menu.is-active span:nth-child(1){
+            transform: translate(0px , -2px) rotate(45deg);
+        }
+        #menu.is-active span:nth-child(2){
+            opacity: 0;
+            transform: translatex(0px);
+        }
+        #menu.is-active span:nth-child(3){
+            transform: translate(-3px , 3px) rotate(-45deg);
+        }
+        #menu.is-active span {
+            background-color: var(--primaryColor);
+        }
+        /*------------------------------------------
+        ------------------MEDIA QUERIES 575 px
+        -------------------------------------------*/
+        @media screen and (max-width: 575px) {
+            /*--------------Home Section--------*/
+            :root{
+                --padding: 1.5rem;
+            }
+            html{
+                font-size: 13px;
+            }
+            .home .container-img{
+                display: none;
+            }
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 82px;
+                padding-top: 0;
+                background-color: var(--bgColor-1);
+                border-bottom: 1px solid var(--bgColor-2);
+                z-index: 100;
+            }
+            nav > a {
+                display: none;
+            }
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: var(--bgColor-2);
+            }
+            nav ul.is-active{
+                display: block;
+            }
+            nav ul li{
+                display: block;
+                text-align: center;
+                margin: 50px;
+            }
+            .container-txt{
+                bottom: 0;
+            }
+            .social{
+                margin-top: 70px;
+            }
+            h3{
+                margin-bottom: 70px;
+            }
+            #menu{
+                display: block;
+            }
+            /*--------------About Section--------*/
+            .about .container-img{
+                display: none;
+            }
+            .about .container-txt{
+                width: 100%;
+            }
+            /*--------------Services Section--------*/
+            .box{
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            /*--------------skills Section--------*/
+            .skills .container-img{
+                display: none;
+            }
+            .skills .container-skills{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            } 
+            .skills .container-skills .content-skills{
+                margin-top: 2rem;
+                align-items: center;
+                justify-content: center;
+            }
+            .skill{
+                width: 80px;
+                height: 80px;
+            }
+            /*--------------footer Section--------*/
+            footer .content-footer{
+                width: 100%;
+            }
+        }
+        /*------------------------------------------
+        ------------------MEDIA QUERIES 767px
+        -------------------------------------------*/
+        @media screen and (min-width: 576px) and (max-width:767px) {
+            /*--------------Home Section--------*/
+            :root {
+                --padding : 1.5rem;
+            }
+            html{
+                font-size: 13px;
+            }
+            .home .container-img{
+                display: none;
+            }
+            .content{
+                padding-top: 82px;
+            }
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 82px;
+                padding-top: 0;
+                background-color: var(--bgColor-1);
+                border-bottom: 1px solid var(--bgColor-2);
+                z-index: 100;
+            }
+            nav > a {
+                display: none;
+            }
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: var(--bgColor-2);
+            }
+            nav ul.is-active{
+                display: block;
+            }
+            nav ul li{
+                display: block;
+                text-align: center;
+                margin: 50px;
+            }
+            .container-txt{
+                bottom: 0;
+            }
+            .social{
+                margin-top: 30px;
+            }
+            h3{
+                margin-bottom: 30px;
+            }
+            #menu{
+                display: block;
+            }
+            /*--------------About Section--------*/
+            .about .container-img{
+                display: none;
+            }
+            .about .container-txt{
+                width: 100%;
+            }
+            /*--------------Services Section--------*/
+            .box{
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            /*--------------skills Section--------*/
+            .skills .container-img{
+                display: none;
+            }
+            .skills .container-skills{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            } 
+            .skills .container-skills .content-skills{
+                margin-top: 2rem;
+                align-items: center;
+                justify-content: center;
+            }
+            .skill{
+                width: 80px;
+                height: 80px;
+            }
+            /*--------------footer Section--------*/
+            footer .content-footer{
+                width: 100%;
+            }
+        }
+        /*------------------------------------------
+        ------------------MEDIA QUERIES tablette up
+        -------------------------------------------*/
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+            /*--------------Home Section--------*/
+            :root{
+                --padding: 1.5rem;
+            }
+            html{
+                font-size: 13px;
+            }
+            .home .container-img{
+                display: none;
+            }
+            .content{
+                padding-top: 82px;
+            }
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 82px;
+                padding-top: 0;
+                background-color: var(--bgColor-1);
+                border-bottom: 1px solid var(--bgColor-2);
+                z-index: 100;
+            }
+            nav > a {
+                display: none;
+            }
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: var(--bgColor-2);
+            }
+            nav ul.is-active{
+                display: block;
+            }
+            nav ul li{
+                display: block;
+                text-align: center;
+                margin: 50px;
+            }
+            .container-txt{
+                bottom: 0;
+            }
+            .social{
+                margin-top: 30px;
+            }
+            h3{
+                margin-bottom: 30px;
+            }
+            #menu{
+                display: block;
+            }
+            /*--------------About Section--------*/
+            .about .container-img{
+                display: none;
+            }
+            .about .container-txt{
+                width: 100%;
+            }
+            /*--------------Services Section--------*/
+            .box{
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            /*--------------skills Section--------*/
+            .skills .container-img{
+                display: none;
+            }
+            .skills .container-skills{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            } 
+            .skills .container-skills .content-skills{
+                margin-top: 2rem;
+                align-items: center;
+                justify-content: center;
+            }
+            .skill{
+                width: 80px;
+                height: 80px;
+            }
+            /*--------------footer Section--------*/
+            footer .content-footer{
+                width: 100%;
+            }
+        }
+        /*------------------------------------------
+        ------------------MEDIA QUERIES tablette down
+        -------------------------------------------*/
+        @media screen and (min-width: 992px) and (max-width: 1279px) {
+            /*--------------Home Section--------*/
+            :root{
+                --padding: 1.5rem;
+            }
+            html{
+                font-size: 13px;
+            }
+            .home .container-img img{
+                height: auto;
+                width: 100%;
+            }
+            .content{
+                padding-top: 82px;
+            }
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 82px;
+                padding-top: 0;
+                background-color: var(--bgColor-1);
+                border-bottom: 1px solid var(--bgColor-2);
+                z-index: 100;
+            }
+            nav > a {
+                display: none;
+            }
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 50vw;
+                height: 100vh;
+                background-color: var(--bgColor-2);
+            }
+            nav ul.is-active{
+                display: block;
+            }
+            nav ul li{
+                display: block;
+                text-align: center;
+                margin: 50px;
+            }
+            .container-txt{
+                bottom: 0;
+            }
+            .social{
+                margin-top: 80px;
+            }
+            h3{
+                margin-bottom: 80px;
+            }
+            #menu{
+                display: block;
+            }
+            /*--------------About Section--------*/
+            .about .container-txt{
+                width: 60%;
+            }
+            /*--------------Services Section--------*/
+            .box{
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            /*--------------skills Section--------*/
+            .skills .container-skills{
+                width: 60%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            } 
+            .skills .container-skills .content-skills{
+                margin-top: 2rem;
+                align-items: center;
+                justify-content: center;
+            }
+            .skill{
+                width: 80px;
+                height: 80px;
+            }
+            /*--------------footer Section--------*/
+            footer .content-footer{
+                width: 100%;
+            }
+        }
+        
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <section class="home">
+        <nav>
+            <h2> Urbaniste <span>203</span></h2>
+            <ul id="actions">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+            <a href="#" class="btn">Subscribe</a>
+            <button id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="content">
+            <div class="container-txt">
+             <h4>hello, my name is</h4>
+             <h1>Abidi <span>Amira</span></h1>
+             <h3>I am <span>Urban planner</span> engineer.</h3>
+             <a href="#" class="btn">Dowload Cv</a>
+             <div class="social">
+                <a href="https://www.facebook.com/urbanist203" target="_blank"><img src="photo/facebook.png" alt=""></a>
+                <a href="https://www.instagram.com/urbaniste203/" target="_blank"><img src="photo/instagram.png" alt=""></a>
+                <a href="https://www.linkedin.com/in/freelancerurbaniste203/" target="_blank"><img src="photo/linkedin.png" alt=""></a>
+                <a href="#" target="_blank"><img src="photo/youtube.png" alt=""></a>
+             </div>
+            </div>
+             <div class="container-img">
+                <img src="photo/shape.png" alt="" class="shape">
+                <img src="photo/archi2.png" alt="" class="pic">
+             </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container-img">
+            <img src="photo/city.png" alt="">
+        </div>
+        <div class="container-txt">
+            <h1>About <span>Me</span></h1>
+            <h5><span>Urban planner</span> engineer</h5>
+            <p>
+                I am a Urban planner Freelancer, I graduate with Master degree of Urban Planning from the Algerian University of Oum Bouaghi - Arbi Ben Mhidi in 2020, Starting from that year i practitioner experienced in a wide range of projects such as urban Design property and real estate , master planning , and land use planning , all as a freelancer. 
+            </p>
+        </div>
+
+    </section>
+    <section class="services">
+        <h1 class="txt-center">Our <span>Services</span></h1>
+        <div class="box">
+            <div class="card">
+                <i class="fa-solid fa-chart-pie" style="color: #ff274b;"></i>
+                <h5>Urban analyse</h5>
+                <div class="paragraph">
+                   <p>
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iste quam impedit ducimus mollitia id minima earum repudiandae, exercitationem odio sequi explicabo cum sint optio vel veritatis necessitatibus accusantium incidunt.
+                   </p>  
+                 </div>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-tree-city" style="color: #ff274b;"></i>
+                <h5>Urban Design</h5>
+                <div class="paragraph">
+                   <p>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iste quam impedit ducimus mollitia id minima earum repudiandae, exercitationem odio sequi explicabo cum sint optio vel veritatis necessitatibus accusantium incidunt.
+                   </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fa-brands fa-unity" style="color: #ff274b;"></i>
+                <h5>3D Modeling</h5>
+                <div class="paragraph">
+                    <p>
+                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iste quam impedit ducimus mollitia id minima earum repudiandae, exercitationem odio sequi explicabo cum sint optio vel veritatis necessitatibus accusantium incidunt.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-map-location-dot" style="color: #ff274b;"></i>
+                <h5>SIG Maps</h5>
+                <div class="paragraph">
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit iste quam impedit ducimus mollitia id minima earum repudiandae, exercitationem odio sequi explicabo cum sint optio vel veritatis necessitatibus accusantium incidunt.
+                  </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="skills">
+        <div class="container-skills">
+            <h1>My <span>Skills</span></h1>
+            <div class="content-skills">
+                <div class="skill"><img src="photo/Autocad_23637.png" alt=""></div>
+                <div class="skill"><img src="photo/3ds-max-icon-26.jpg" alt=""></div>
+                <div class="skill"><img src="photo/Google_Sketchup_23504.png" alt=""></div>
+                <div class="skill"><img src="photo/NicePng_pink-instagram-logo-png_3268698.png" alt=""></div>
+                <div class="skill"><img src="photo/Daco_2958586.png" alt=""></div>
+                <div class="skill"><img src="photo/adobe_photoshop_macos_bigsur_icon_190436.png" alt=""></div>
+                <div class="skill"><img src="photo/adobe_illustrator_macos_bigsur_icon_190447.png" alt=""></div>
+                <div class="skill"><img src="photo/microsoft_word_alt_macos_bigsur_icon_189946.png" alt=""></div>
+                <div class="skill"><img src="photo/microsoft_powerpoint_macos_bigsur_icon_189966.png" alt=""></div>
+                <div class="skill"><img src="photo/microsoft_excel_alt_macos_bigsur_icon_189978.png" alt=""></div>
+                <div class="skill"><img src="photo/file_type_html_icon_130541.png" alt=""></div>
+                <div class="skill"><img src="photo/file_type_css_icon_130661.png" alt=""></div>
+                <div class="skill"><img src="photo/python_104451.png" alt=""></div>
+                <div class="skill"><img src="photo/java_original_wordmark_logo_icon_146459.png" alt=""></div>
+            </div>
+
+
+        </div>
+        <div class="container-img">
+            <img src="photo/skills1.png" alt="">
+        </div>
+    </section>
+    <footer>
+        <div class="content-footer">
+            <h2>Abidi <span>Amira</span></h2>
+            <p> Thanks For your visit</p>
+            <p>For more informatin contact me on My accounts up</p>
+            <p class="end">CopyRight By Abidi Amira &copy;s</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
